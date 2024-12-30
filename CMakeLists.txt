@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.4.1)
 
 set (USE_LTO ON)
 set(XRAY_USE_LUAJIT OFF)
+set(CMAKE_UNITY_BUILD ON)
 
 set(LUA_LOCATION ${CMAKE_SOURCE_DIR}/lua)
 set(LUA_INCLUDE_DIR ${LUA_LOCATION}/src/main/lua51src/include)
