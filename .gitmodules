@@ -7,3 +7,6 @@
 [submodule "jpeg/src/main/jni/libjpeg-turbo"]
 	path = jpeg/src/main/jni/libjpeg-turbo
 	url = https://github.com/libjpeg-turbo/libjpeg-turbo.git
+[submodule "libopenal/src/main/jni/openal-soft"]
+	path = libopenal/src/main/jni/openal-soft
+	url = https://github.com/kcat/openal-soft.git
