@@ -1,3 +1,6 @@
 [submodule "libvorbis/src/main/libvorbis-android"]
 	path = libvorbis/src/main/libvorbis-android
 	url = https://github.com/sandstranger/libvorbis-android.git
+[submodule "regal/src/main/jni/regal"]
+	path = regal/src/main/jni/regal
+	url = https://github.com/sandstranger/regal-emscripten-fixes.git

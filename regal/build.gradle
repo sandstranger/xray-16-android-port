@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'com.libvorbis'
+    namespace 'com.regal'
     compileSdk versions.target_sdk
 
     defaultConfig {
@@ -18,7 +18,7 @@ android {
         }
         externalNativeBuild {
             ndkBuild {
-                arguments += build_flags.ndk_build_args, "-j16"
+                arguments += build_flags.ndk_build_args
                 arguments += "-j${Runtime.getRuntime().availableProcessors()}"
                 cFlags  = build_flags.common_c_flags
                 cppFlags = build_flags.common_cpp_flags
@@ -27,9 +27,10 @@ android {
     }
     externalNativeBuild {
         ndkBuild {
-            path 'src/main/libvorbis-android/jni/Android.mk'
+            path 'src/main/jni/regal/build/android/Regal/jni/Android.mk'
         }
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -40,7 +41,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-
     buildToolsVersion versions.build_tools_version
     ndkVersion versions.ndk_version
 }
