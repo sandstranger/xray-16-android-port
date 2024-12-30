@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 set (USE_LTO ON)
+set(XRAY_USE_LUAJIT OFF)
+
+set(LUA_LOCATION ${CMAKE_SOURCE_DIR}/lua)
+set(LUA_INCLUDE_DIR ${LUA_LOCATION}/src/main/lua51src/include)
+set(LUA_LIBRARIES ${LUA_LOCATION}/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/liblua.so)
 
 set(SDL_LOCATION ${CMAKE_SOURCE_DIR}/sdl2)
 set(SDL2_INCLUDE_DIRS ${SDL_LOCATION}/include)

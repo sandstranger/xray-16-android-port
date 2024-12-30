@@ -57,7 +57,7 @@ android {
 
 }
 
-preBuild.dependsOn ':sdl2:android-project:app:build',':mimalloc:build',':lzo:build',':libopenal:build',':jpeg:build',
+preBuild.dependsOn ':lua:build',':sdl2:android-project:app:build',':mimalloc:build',':lzo:build',':libopenal:build',':jpeg:build',
         ':libvorbis:build'//, ':regal:build'
 
 dependencies {
@@ -67,6 +67,7 @@ dependencies {
     implementation (project(":libopenal"))
     implementation (project(":lzo"))
     implementation (project(":mimalloc"))
+    implementation (project(":lua"))
     implementation project(':sdl2:android-project:app')
 
     implementation libs.androidx.core.ktx
