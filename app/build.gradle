@@ -54,14 +54,15 @@ android {
 
     buildToolsVersion versions.build_tools_version
     ndkVersion versions.ndk_version
+
 }
 
 preBuild.dependsOn ':sdl2:android-project:app:build',':mimalloc:build',':lzo:build',':libopenal:build',':jpeg:build',
-        ':libvorbis:build', ':regal:build'
+        ':libvorbis:build'//, ':regal:build'
 
 dependencies {
     implementation(project(":libvorbis"))
-    implementation(project(":regal"))
+//    implementation(project(":regal"))
     implementation (project(":jpeg"))
     implementation (project(":libopenal"))
     implementation (project(":lzo"))
