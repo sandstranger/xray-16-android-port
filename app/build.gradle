@@ -15,7 +15,19 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters = []
+            abiFilters.addAll(abi_filters)
+        }
+        externalNativeBuild {
+            cmake {
+                arguments"-DANDROID_PLATFORM=android-$versions.native_android_platform_version",
+                        "-DCMAKE_CXX_FLAGS=-O3 -ffast-math -flto=thin -DNDEBUG",
+                        "-DCMAKE_C_FLAGS=-O3 -ffast-math -flto=thin -DNDEBUG",
+                        "-DCMAKE_SHARED_LINKER_FLAGS=-flto=thin -Wl,-plugin-opt=-emulated-tls -fuse-ld=lld"
+
+            }
+        }
     }
 
     buildTypes {
@@ -33,6 +45,11 @@ android {
     }
     buildFeatures {
         compose true
+    }
+    externalNativeBuild {
+        cmake {
+            path "$rootProject.rootDir/CMakeLists.txt"
+        }
     }
 
     buildToolsVersion versions.build_tools_version

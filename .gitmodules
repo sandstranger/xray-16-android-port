@@ -19,3 +19,6 @@
 [submodule "sdl2"]
 	path = sdl2
 	url = https://github.com/sandstranger/SDL.git
+[submodule "app/src/main/jni/xray-16"]
+	path = app/src/main/jni/xray-16
+	url = https://github.com/sandstranger/xray-16.git
