@@ -10,3 +10,6 @@
 [submodule "libopenal/src/main/jni/openal-soft"]
 	path = libopenal/src/main/jni/openal-soft
 	url = https://github.com/kcat/openal-soft.git
+[submodule "lzo/src/main/jni/lzo"]
+	path = lzo/src/main/jni/lzo
+	url = https://github.com/nemequ/lzo.git
