@@ -4,3 +4,6 @@
 [submodule "regal/src/main/jni/regal"]
 	path = regal/src/main/jni/regal
 	url = https://github.com/sandstranger/regal-emscripten-fixes.git
+[submodule "jpeg/src/main/jni/libjpeg-turbo"]
+	path = jpeg/src/main/jni/libjpeg-turbo
+	url = https://github.com/libjpeg-turbo/libjpeg-turbo.git
