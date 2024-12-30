@@ -16,3 +16,6 @@
 [submodule "mimalloc/src/main/jni/mimalloc"]
 	path = mimalloc/src/main/jni/mimalloc
 	url = https://github.com/microsoft/mimalloc.git
+[submodule "sdl2"]
+	path = sdl2
+	url = https://github.com/sandstranger/SDL.git

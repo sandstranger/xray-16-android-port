@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
 
@@ -39,7 +39,7 @@ android {
     ndkVersion versions.ndk_version
 }
 
-preBuild.dependsOn ':mimalloc:build',':lzo:build',':libopenal:build',':jpeg:build',
+preBuild.dependsOn ':sdl2:android-project:app:build',':mimalloc:build',':lzo:build',':libopenal:build',':jpeg:build',
         ':libvorbis:build', ':regal:build'
 
 dependencies {
@@ -49,6 +49,7 @@ dependencies {
     implementation (project(":libopenal"))
     implementation (project(":lzo"))
     implementation (project(":mimalloc"))
+    implementation project(':sdl2:android-project:app')
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
