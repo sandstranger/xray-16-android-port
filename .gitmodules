@@ -13,3 +13,6 @@
 [submodule "lzo/src/main/jni/lzo"]
 	path = lzo/src/main/jni/lzo
 	url = https://github.com/nemequ/lzo.git
+[submodule "mimalloc/src/main/jni/mimalloc"]
+	path = mimalloc/src/main/jni/mimalloc
+	url = https://github.com/microsoft/mimalloc.git

@@ -39,7 +39,7 @@ android {
     ndkVersion versions.ndk_version
 }
 
-preBuild.dependsOn ':lzo:build',':libopenal:build',':jpeg:build',
+preBuild.dependsOn ':mimalloc:build',':lzo:build',':libopenal:build',':jpeg:build',
         ':libvorbis:build', ':regal:build'
 
 dependencies {
@@ -48,6 +48,7 @@ dependencies {
     implementation (project(":jpeg"))
     implementation (project(":libopenal"))
     implementation (project(":lzo"))
+    implementation (project(":mimalloc"))
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
