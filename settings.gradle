@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "xray-16"
 include ':app'
+include ':libvorbis'

@@ -1,0 +1,3 @@
+[submodule "libvorbis/src/main/libvorbis-android"]
+	path = libvorbis/src/main/libvorbis-android
+	url = https://github.com/sandstranger/libvorbis-android.git

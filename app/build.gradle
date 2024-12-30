@@ -36,7 +36,10 @@ android {
     }
 }
 
+preBuild.dependsOn ':libvorbis:build'
+
 dependencies {
+    implementation(project(":libvorbis"))
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
