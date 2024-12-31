@@ -66,6 +66,9 @@ else ()
     set(JPEG_LIBRARY ${JPEG_LOCATION}/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/libjpeg.so)
 endif ()
 
+set(OPENGL_INCLUDE ${CMAKE_SOURCE_DIR}/regal/src/main/jni/regal/include)
 set(OPENGL_opengl_LIBRARY ${CMAKE_SOURCE_DIR}/regal/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/libGL.so)
+
+include_directories(PUBLIC ${OPENGL_INCLUDE})
 
 add_subdirectory("${CMAKE_SOURCE_DIR}/app/src/main/jni/xray-16")
