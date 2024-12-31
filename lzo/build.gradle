@@ -41,6 +41,7 @@ android {
     externalNativeBuild {
         cmake {
             path "src/main/jni/lzo/CMakeLists.txt"
+            version versions.cmake_version
         }
     }
     buildToolsVersion versions.build_tools_version

@@ -22,10 +22,8 @@ android {
         externalNativeBuild {
             cmake {
                 arguments"-DANDROID_PLATFORM=android-$versions.native_android_platform_version",
-                        "-DCMAKE_CXX_FLAGS=-std=c++20 -O3 -ffast-math -flto=thin -Wno-format-security -Wno-non-pod-varargs",
-                        "-DCMAKE_C_FLAGS=-O3 -ffast-math -flto=thin -Wno-format-security -Wno-non-pod-varargs",
-                        "-DCMAKE_SHARED_LINKER_FLAGS=-flto=thin -Wl,-plugin-opt=-emulated-tls -fuse-ld=lld"
-
+                        "-DCMAKE_CXX_FLAGS=-O3 -ffast-math -Wno-format-security -Wno-non-pod-varargs",
+                        "-DCMAKE_C_FLAGS=-O3 -ffast-math -Wno-format-security -Wno-non-pod-varargs"
             }
         }
     }
@@ -49,6 +47,7 @@ android {
     externalNativeBuild {
         cmake {
             path "$rootProject.rootDir/CMakeLists.txt"
+            version versions.cmake_version
         }
     }
 
@@ -68,7 +67,6 @@ dependencies {
     implementation (project(":mimalloc"))
     implementation (project(":lua"))
     implementation project(':sdl2:android-project:app')
-
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.androidx.activity.compose

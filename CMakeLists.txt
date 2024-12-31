@@ -1,8 +1,10 @@
-cmake_minimum_required(VERSION 3.4.1)
+cmake_minimum_required(VERSION 3.22.1)
+project(xray-16)
 
 set (USE_LTO ON)
 set(XRAY_USE_LUAJIT OFF)
 set(CMAKE_UNITY_BUILD ON)
+set(PCH_WARN_INVALID OFF)
 
 set(LUA_LOCATION ${CMAKE_SOURCE_DIR}/lua)
 set(LUA_INCLUDE_DIR ${LUA_LOCATION}/src/main/lua51src/include)

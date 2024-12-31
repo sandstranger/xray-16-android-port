@@ -4,9 +4,9 @@ buildscript {
             target_sdk : 34,
             ndk_version : '27.2.12479018',
             build_tools_version : '35.0.0',
-            native_android_platform_version : 28
+            native_android_platform_version : 28,
+            cmake_version : "3.31.1"
     ]
-
     ext.build_flags = [
             arguments : "-j${Runtime.getRuntime().availableProcessors()}",
             common_c_flags : ["-O3","-flto=thin","-ffast-math" ],
@@ -14,7 +14,6 @@ buildscript {
             ndk_build_args : "APP_PLATFORM=android-$versions.native_android_platform_version"
     ]
     ext.abi_filters = ['armeabi-v7a','arm64-v8a',"x86","x86_64"]
-
     ext.rootDir = rootProject.rootDir
 }
 
