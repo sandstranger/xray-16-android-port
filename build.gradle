@@ -13,7 +13,7 @@ buildscript {
             common_cpp_flags : ["-O3" ,"-flto=thin", "-ffast-math"],
             ndk_build_args : "APP_PLATFORM=android-$versions.native_android_platform_version"
     ]
-    ext.abi_filters = ['armeabi-v7a','arm64-v8a',"x86","x86_64"]
+    ext.abi_filters = ['arm64-v8a',"x86_64"]
     ext.rootDir = rootProject.rootDir
 }
 

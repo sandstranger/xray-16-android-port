@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.22.1)
 project(xray-16)
 
-set (USE_LTO ON)
+set (USE_LTO OFF)
 set(XRAY_USE_LUAJIT OFF)
 set(CMAKE_UNITY_BUILD ON)
 set(PCH_WARN_INVALID OFF)
 
 set(LUA_LOCATION ${CMAKE_SOURCE_DIR}/lua)
-set(LUA_INCLUDE_DIR ${LUA_LOCATION}/src/main/lua51src/include)
-set(LUA_LIBRARIES ${LUA_LOCATION}/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/liblua.so)
+set(LUA_INCLUDE_DIR ${LUA_LOCATION}/src/main/LuaJIT_CMAKE/src)
+set(LUA_LIBRARIES ${LUA_LOCATION}/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/libluajit.so)
 
 set(SDL_LOCATION ${CMAKE_SOURCE_DIR}/sdl2)
 set(SDL2_INCLUDE_DIRS ${SDL_LOCATION}/include)
@@ -65,5 +65,7 @@ if (CMAKE_BUILD_TYPE EQUAL "DEBUG")
 else ()
     set(JPEG_LIBRARY ${JPEG_LOCATION}/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/libjpeg.so)
 endif ()
+
+set(OPENGL_opengl_LIBRARY ${CMAKE_SOURCE_DIR}/regal/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/libGL.so)
 
 add_subdirectory("${CMAKE_SOURCE_DIR}/app/src/main/jni/xray-16")

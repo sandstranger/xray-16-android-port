@@ -22,6 +22,6 @@ url=https://github.com/sandstranger/libjpeg-turbo.git
 [submodule "app/src/main/jni/xray-16"]
 	path = app/src/main/jni/xray-16
 	url = https://github.com/sandstranger/xray-16.git
-[submodule "lua/src/main/lua51src"]
-	path = lua/src/main/lua51src
-	url = https://github.com/sandstranger/lua51src.git
+[submodule "lua/src/main/LuaJIT_CMAKE"]
+	path = lua/src/main/LuaJIT_CMAKE
+url=https://github.com/sandstranger/LuaJIT.git
