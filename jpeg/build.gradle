@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
 }
-
+//
 android {
     namespace 'com.jpeg'
     compileSdk versions.target_sdk
@@ -26,6 +26,7 @@ android {
         }
     }
 
+    //
     buildTypes {
         release {
             minifyEnabled false
