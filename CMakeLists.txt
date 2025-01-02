@@ -66,9 +66,10 @@ else ()
     set(JPEG_LIBRARY ${JPEG_LOCATION}/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/libjpeg.so)
 endif ()
 
-set(OPENGL_INCLUDE ${CMAKE_SOURCE_DIR}/regal/src/main/jni/regal/include)
-set(OPENGL_opengl_LIBRARY ${CMAKE_SOURCE_DIR}/regal/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/libGL.so)
+set(OPENGL_opengl_LIBRARY ${CMAKE_SOURCE_DIR}/app/src/main/jniLibs/${ANDROID_ABI}/libGL.so)
 
-include_directories(PUBLIC ${OPENGL_INCLUDE})
+set(NSBYPASS_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/driver-helper/src/main/jni/driver_helper)
+set(NSBYPASS_LIBRARY ${CMAKE_SOURCE_DIR}/driver-helper/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/${ANDROID_ABI}/libnsbypass.so)
+include_directories(PUBLIC ${NSBYPASS_INCLUDE_DIR})
 
 add_subdirectory("${CMAKE_SOURCE_DIR}/app/src/main/jni/xray-16")

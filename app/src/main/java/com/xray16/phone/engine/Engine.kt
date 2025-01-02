@@ -8,11 +8,11 @@ import android.view.View
 import com.xray16.phone.utils.startActivity
 import com.xray16.phone.engine.activity.EngineActivity
 
-internal val releaseLibsArray= arrayOf("GL","SDL2","jpeg","luajit","lzo2","mimalloc","ogg","vorbis",
+internal val releaseLibsArray= arrayOf("GL","nsbypass","SDL2","jpeg","luajit","lzo2","mimalloc","ogg","vorbis",
     "openal","xrAICore","xrAPI","xrCDB","xrCore","xrEngine","xrGame","xrMaterialSystem","xrNetServer","xrParticles",
     "xrScriptEngine","xrSound","xrUICore","xrAPI","xrRender_GL","xr_3da")
 
-internal val debugLibsArray= arrayOf("GL","SDL2","jpeg","luajit","lzo2","mimalloc","ogg","vorbis",
+internal val debugLibsArray= arrayOf("GL","nsbypass","SDL2","jpeg","luajit","lzo2","mimalloc","ogg","vorbis",
     "openal","xrAICore","xrAPI","xrCDB","xrCore","xrEngine","xrGame","xrMaterialSystem","xrNetServer","xrParticles",
     "xrScriptEngine","xrSound","xrUICore","xrAPI","xrRender_GL","xr_3da")
 
@@ -33,6 +33,12 @@ fun killEngine() = Process.killProcess(Process.myPid())
 
 fun startEngine(context: Context) {
     Os.setenv("GAME_PATH","${Environment.getExternalStorageDirectory().absolutePath}/stalker",true)
-    Os.setenv("REGAL_LOG_FILE", Environment.getExternalStorageDirectory().absolutePath + "/file.log",true);
+    Os.setenv("SDL_VIDEO_GL_DRIVER","libGL.so", true)
+    Os.setenv("MESA_LOADER_DRIVER_OVERRIDE","zink",true);
+    Os.setenv("GALLIUM_DRIVER","zink",true);
+    Os.setenv("MESA_GL_VERSION_OVERRIDE", "4.1",true);
+    Os.setenv("MESA_GLSL_VERSION_OVERRIDE", "410",true);
+    Os.setenv("NATIVE_LIB_DIR", context.applicationInfo.nativeLibraryDir, true)
+    Os.setenv("TMPDIR",context.cacheDir.absolutePath, true)
     context.startActivity<EngineActivity>()
 }

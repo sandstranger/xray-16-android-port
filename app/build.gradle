@@ -67,12 +67,12 @@ android {
     ndkVersion versions.ndk_version
 }
 
-preBuild.dependsOn ':lua:build',':sdl2:android-project:app:build',':mimalloc:build',':lzo:build',':libopenal:build',':jpeg:build',
-        ':libvorbis:build', ':regal:build'
+preBuild.dependsOn ':driver-helper:build',':lua:build',':sdl2:android-project:app:build',':mimalloc:build',':lzo:build',':libopenal:build',':jpeg:build',
+        ':libvorbis:build'
 
 dependencies {
+    implementation(project(":driver-helper"))
     implementation(project(":libvorbis"))
-    implementation(project(":regal"))
     implementation (project(":jpeg"))
     implementation (project(":libopenal"))
     implementation (project(":lzo"))

@@ -22,10 +22,10 @@ dependencyResolutionManagement {
 rootProject.name = "xray-16"
 include ':app'
 include ':libvorbis'
-include ':regal'
 include ':jpeg'
 include ':libopenal'
 include ':lzo'
 include ':mimalloc'
 include ':sdl2:android-project:app'
 include ':lua'
+include ':driver-helper'
