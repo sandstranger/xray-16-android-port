@@ -12,7 +12,7 @@ internal val releaseLibsArray= arrayOf("GL","nsbypass","SDL2","jpeg","luajit","l
     "openal","xrAICore","xrAPI","xrCDB","xrCore","xrEngine","xrGame","xrMaterialSystem","xrNetServer","xrParticles",
     "xrScriptEngine","xrSound","xrUICore","xrAPI","xrRender_GL","xr_3da")
 
-internal val debugLibsArray= arrayOf("GL","nsbypass","SDL2","jpeg","luajit","lzo2","mimalloc","ogg","vorbis",
+internal val debugLibsArray= arrayOf("GL","nsbypass","SDL2","jpeg","luajit","lzo2","mimalloc-debug","ogg","vorbis",
     "openal","xrAICore","xrAPI","xrCDB","xrCore","xrEngine","xrGame","xrMaterialSystem","xrNetServer","xrParticles",
     "xrScriptEngine","xrSound","xrUICore","xrAPI","xrRender_GL","xr_3da")
 
