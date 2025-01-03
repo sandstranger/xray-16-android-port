@@ -34,6 +34,7 @@ fun killEngine() = Process.killProcess(Process.myPid())
 fun startEngine(context: Context) {
     Os.setenv("GAME_PATH","${Environment.getExternalStorageDirectory().absolutePath}/stalker",true)
     Os.setenv("SDL_VIDEO_GL_DRIVER","libGL.so", true)
+    Os.setenv("VSYNC_IN_ZINK","1",true)
     Os.setenv("MESA_LOADER_DRIVER_OVERRIDE","zink",true);
     Os.setenv("GALLIUM_DRIVER","zink",true);
     Os.setenv("MESA_GL_VERSION_OVERRIDE", "4.1",true);
