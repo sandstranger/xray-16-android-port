@@ -22,10 +22,12 @@ android {
             abiFilters = []
             abiFilters.addAll(abi_filters)
         }
+
         externalNativeBuild {
             cmake {
                 arguments"-DANDROID_PLATFORM=android-$versions.native_android_platform_version",
                         "-DCMAKE_CXX_FLAGS=-O3 -ffast-math -Wno-format-security -Wno-non-pod-varargs",
+                        "-DIMGUI_ENABLE_VIEWPORTS=0",
                         "-DCMAKE_C_FLAGS=-O3 -ffast-math -Wno-format-security -Wno-non-pod-varargs"
             }
         }
