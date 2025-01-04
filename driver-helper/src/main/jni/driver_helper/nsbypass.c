@@ -69,9 +69,6 @@ static void* find_branch_label(void* func_start) {
 }
 
 bool linker_ns_load(const char* lib_search_path) {
-#ifndef ADRENO_POSSIBLE
-    return false;
-#else
     loader_dlopen_t loader_dlopen = find_branch_label(&dlopen);
     // reprotecting the functions removes protection from indirect jumps
     mprotect(loader_dlopen, PAGE_SIZE, PROT_WRITE | PROT_READ | PROT_EXEC);
@@ -112,18 +109,13 @@ bool linker_ns_load(const char* lib_search_path) {
     android_link_namespaces(driver_namespace, NULL, "libnativeloader_lazy.so");
     dlclose(ld_android_handle);
     return true;
-#endif
 }
 
 void* linker_ns_dlopen(const char* name, int flag) {
-#ifndef ADRENO_POSSIBLE
-    return NULL;
-#else
     android_dlextinfo dlextinfo;
     dlextinfo.flags = ANDROID_DLEXT_USE_NAMESPACE;
     dlextinfo.library_namespace = driver_namespace;
     return android_dlopen_ext(name, flag, &dlextinfo);
-#endif
 }
 
 bool patch_elf_soname(int patchfd, int realfd, uint16_t patchid) {
@@ -164,9 +156,6 @@ bool patch_elf_soname(int patchfd, int realfd, uint16_t patchid) {
 }
 
 void* linker_ns_dlopen_unique(const char* tmpdir, const char* name, int flags) {
-#ifndef ADRENO_POSSIBLE
-    return NULL;
-#else
     char pathbuf[PATH_MAX];
     static uint16_t patch_id;
     int patch_fd, real_fd;
@@ -190,5 +179,4 @@ void* linker_ns_dlopen_unique(const char* tmpdir, const char* name, int flags) {
     extinfo.library_namespace = driver_namespace;
     snprintf(pathbuf, PATH_MAX, "/proc/self/fd/%d", patch_fd);
     return android_dlopen_ext(pathbuf, flags, &extinfo);
-#endif
 }
