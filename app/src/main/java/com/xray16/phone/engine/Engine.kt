@@ -41,5 +41,6 @@ fun startEngine(context: Context) {
     Os.setenv("MESA_GLSL_VERSION_OVERRIDE", "410",true);
     Os.setenv("NATIVE_LIB_DIR", context.applicationInfo.nativeLibraryDir, true)
     Os.setenv("TMPDIR",context.cacheDir.absolutePath, true)
+    Os.setenv("APP_ROOT_DIR",context.applicationInfo.dataDir,true)
     context.startActivity<EngineActivity>()
 }
