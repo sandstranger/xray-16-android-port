@@ -14,6 +14,7 @@ class EngineActivity : SDLActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setFullscreen(window.decorView)
         super.onCreate(savedInstanceState)
+        window.setBackgroundDrawable(null)
     }
 
     override fun getMainSharedObject() = MAIN_ENGINE_NATIVE_LIB
