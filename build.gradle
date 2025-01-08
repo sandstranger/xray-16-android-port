@@ -9,8 +9,8 @@ buildscript {
     ]
     ext.build_flags = [
             arguments : "-j${Runtime.getRuntime().availableProcessors()}",
-            common_c_flags : ["-O3","-flto=thin","-ffast-math" ],
-            common_cpp_flags : ["-O3" ,"-flto=thin", "-ffast-math"],
+            common_c_flags : ["-O3","-flto=thin"],
+            common_cpp_flags : ["-O3" ,"-flto=thin"],
             ndk_build_args : "APP_PLATFORM=android-$versions.native_android_platform_version"
     ]
     ext.abi_filters = ['arm64-v8a',"x86_64"]
