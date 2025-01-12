@@ -17,12 +17,13 @@ android {
         externalNativeBuild {
             cmake {
                 arguments "-DANDROID_PLATFORM=android-$versions.native_android_platform_version",
-                        "-DCMAKE_CXX_FLAGS=-O3 -flto=thin -DNDEBUG",
-                        "-DCMAKE_C_FLAGS=-O3 -flto=thin -DNDEBUG",
+                        "-DCMAKE_CXX_FLAGS=-O3 -flto=thin",
+                        "-DCMAKE_C_FLAGS=-O3 -flto=thin",
                         "-DCMAKE_SHARED_LINKER_FLAGS=-flto=thin -Wl,-plugin-opt=-emulated-tls -fuse-ld=lld"
             }
         }
     }
+    //
     externalNativeBuild {
         cmake {
             path "src/main/LuaJIT_CMAKE/CMakeLists.txt"
