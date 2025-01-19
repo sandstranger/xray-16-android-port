@@ -32,7 +32,7 @@ internal fun setFullscreen(decorView: View) {
 fun killEngine() = Process.killProcess(Process.myPid())
 
 fun startEngine(context: Context) {
-    Os.setenv("GAME_PATH","${Environment.getExternalStorageDirectory().absolutePath}/stalker",true)
+    Os.setenv("ANDROID_PATH","${Environment.getExternalStorageDirectory().absolutePath}/stalker",true)
     Os.setenv("SDL_VIDEO_GL_DRIVER","libGL.so", true)
     Os.setenv("VSYNC_IN_ZINK","1",true)
     Os.setenv("MESA_LOADER_DRIVER_OVERRIDE","zink",true);
@@ -41,6 +41,6 @@ fun startEngine(context: Context) {
     Os.setenv("MESA_GLSL_VERSION_OVERRIDE", "410",true);
     Os.setenv("NATIVE_LIB_DIR", context.applicationInfo.nativeLibraryDir, true)
     Os.setenv("TMPDIR",context.cacheDir.absolutePath, true)
-    Os.setenv("APP_ROOT_DIR",context.applicationInfo.dataDir,true)
+    Os.setenv("APP_DATA_ROOT",context.applicationInfo.dataDir,true)
     context.startActivity<EngineActivity>()
 }
