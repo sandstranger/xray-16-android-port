@@ -29,6 +29,8 @@
 #define ELF_HALF Elf64_Half
 #define ELF_XWORD Elf64_Xword
 #define ELF_DYN Elf64_Dyn
+#define PAGE_SIZE 4096
+#define PAGE_MASK (~(PAGE_SIZE - 1))
 
 //#define ADRENO_POSSIBLE
 
